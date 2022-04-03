@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameStopped)
         {
-            // gameOverScreen.SetActive(true);
+            gameOverScreen.SetActive(true);
         }
     }
 

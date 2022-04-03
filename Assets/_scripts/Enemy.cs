@@ -7,10 +7,6 @@ public class Enemy : MonoBehaviour
     public GameObject deathAnimnation;
     public float life;
 
-    void Start()
-    {
-        life = GameDataManager.instance.enemyLife;
-    }
 
     void Update()
     {
@@ -27,21 +23,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (GameManager.instance.isGameStopped)
-        {
-            return;
-        }
-
-        string tag = other.gameObject.tag;
-        if (tag == "Player")
-        {
-            RemovedAndAnimated(deathAnimnation);
-            GameManager.instance.gameOver();
-        }
-
-    }
 
     public void AddDamage(float damage)
     {
@@ -56,6 +37,8 @@ public class Enemy : MonoBehaviour
     void TriggerDeath()
     {
         RemovedAndAnimated(deathAnimnation);
+
+        GameDataManager.instance.enemies.Remove(this);
     }
 
     private void RemovedAndAnimated(GameObject anim){

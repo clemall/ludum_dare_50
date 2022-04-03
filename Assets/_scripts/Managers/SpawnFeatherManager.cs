@@ -7,6 +7,7 @@ public class SpawnFeatherManager : MonoBehaviour
 
     public Collider2D SpawnFeathersArea;
     public GameObject Feather;
+    public GameObject MetalFeather;
 
     private static SpawnFeatherManager _instance;
     public static SpawnFeatherManager instance
@@ -49,7 +50,15 @@ public class SpawnFeatherManager : MonoBehaviour
             Vector3 spawnPosition = RandomPointInBounds(SpawnFeathersArea.bounds);
             spawnPosition.z = -1f;
 
-            GameObject go = Instantiate(Feather, spawnPosition,  Quaternion.identity) as GameObject;
+            GameObject go;
+            if (GameDataManager.instance.unlockMetalFeather)
+            {
+                go = Instantiate(MetalFeather, spawnPosition,  Quaternion.identity) as GameObject;
+            }
+            else
+            {
+                go = Instantiate(Feather, spawnPosition,  Quaternion.identity) as GameObject;
+            }
             go.transform.rotation = Quaternion.Euler(0, 0, 90);
             go.transform.SetParent(transform);
     }

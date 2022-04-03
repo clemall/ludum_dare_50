@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemiesManager : MonoBehaviour
+public class SpawnBossManager : MonoBehaviour
 {
 
     public bool STOP = false;
@@ -10,20 +10,20 @@ public class SpawnEnemiesManager : MonoBehaviour
     public Collider2D SpawnEnemiesArea;
     public List<GameObject> Enemies;
 
-    private static SpawnEnemiesManager _instance;
-    public static SpawnEnemiesManager instance
+    private static SpawnBossManager _instance;
+    public static SpawnBossManager instance
     {
         get
         {
             if(_instance == null)
-                _instance = GameObject.FindObjectOfType<SpawnEnemiesManager>();
+                _instance = GameObject.FindObjectOfType<SpawnBossManager>();
             return _instance;
         }
     }
 
     void Start()
     {
-        StartCoroutine("SpawningEnemies");
+        StartCoroutine("SpawningBoss");
         StartCoroutine("IncreaseDifficulty");
     }
 
@@ -36,18 +36,18 @@ public class SpawnEnemiesManager : MonoBehaviour
     //     }
     // }
 
-    IEnumerator SpawningEnemies (){
+    IEnumerator SpawningBoss (){
 		while(true)
 		{
 			yield return  new WaitForSeconds(GetWaitingTime());
             if (!GameManager.instance.isGameStopped && !STOP)
             {
-                SpawnEnemie();
+                SpawnBoss();
             }
 		}
 	}
 
-    void SpawnEnemie()
+    void SpawnBoss()
     {
             Vector3 spawnPosition = RandomPointInBounds(SpawnEnemiesArea.bounds);
             spawnPosition.z = -1f;
@@ -56,16 +56,16 @@ public class SpawnEnemiesManager : MonoBehaviour
             GameObject go = Instantiate(pickedEnemy, spawnPosition,  Quaternion.identity) as GameObject;
             go.transform.SetParent(transform);
 
-            Enemy enemy = go.GetComponent<Enemy>();
-            enemy.life = GameDataManager.instance.enemyLife;
-            GameDataManager.instance.enemies.Add(enemy);
+            Enemy boss = go.GetComponent<Enemy>();
+            boss.life = GameDataManager.instance.bossLife;
+            GameDataManager.instance.bosses.Add(boss);
     }
 
 
     float GetWaitingTime()
     {
-        float min = GameDataManager.instance.spawnEnemiesWaitingTime * .8f;
-        float max = GameDataManager.instance.spawnEnemiesWaitingTime * 1.2f;
+        float min = GameDataManager.instance.spawnBossWaitingTime * .8f;
+        float max = GameDataManager.instance.spawnBossWaitingTime * 1.2f;
         return Random.Range(min, max);
     }
 
@@ -80,12 +80,11 @@ public class SpawnEnemiesManager : MonoBehaviour
     IEnumerator IncreaseDifficulty (){
 		while(true)
 		{
-			yield return  new WaitForSeconds(2f);
+			yield return  new WaitForSeconds(20f);
             if (!GameManager.instance.isGameStopped && !STOP)
             {
-                //  increase life and spawn rate
-                GameDataManager.instance.spawnEnemiesWaitingTime *= 0.999f;
-                GameDataManager.instance.enemyLife += 3f;
+                //  increase life
+                GameDataManager.instance.bossLife += 400f;
             }
 		}
 	}
