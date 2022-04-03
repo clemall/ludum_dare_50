@@ -85,7 +85,7 @@ public class SpawnEnemiesManager : MonoBehaviour
             {
                 //  increase life and spawn rate
                 GameDataManager.instance.spawnEnemiesWaitingTime *= GameDataManager.instance.spawnEnemiesWaitingTimeFactor;
-                GameDataManager.instance.enemyLife += GameDataManager.instance.enemyLifeFactor;
+                GameDataManager.instance.enemyLife += Random.Range(GameDataManager.instance.enemyLifeFactor, GameDataManager.instance.enemyLifeFactor * 3f);
             }
 		}
 	}
