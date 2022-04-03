@@ -10556,7 +10556,7 @@ MonoBehaviour:
   rocketDamage: 400
   rocketMovementSpeed: 16
   rocketArea: 4
-  rocketLifeTime: 3
+  rocketLifeTime: 2
   spawnRocketWaitingTime: 2
   amountOfUpgradeBought: 0
   unlockMetalFeather: 0

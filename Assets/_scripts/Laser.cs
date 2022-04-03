@@ -11,6 +11,11 @@ public class Laser : MonoBehaviour
         {
             GameDataManager.instance.enemies[i].AddDamage(GameDataManager.instance.laserDamage);
         }
+
+        for (int j = GameDataManager.instance.bosses.Count - 1; j >= 0; j--)
+        {
+            GameDataManager.instance.bosses[j].AddDamage(GameDataManager.instance.laserDamage);
+        }
     }
 
 }
