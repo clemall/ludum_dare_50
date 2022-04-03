@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool isGameStopped = false;
+    public bool isGameover = false;
 
     public GameObject gameOverScreen;
 
@@ -23,19 +24,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void gameOver(){
+    public void GameOver(){
         isGameStopped = true;
-    }
-
-    void Start(){
-    }
-
-    void Update()
-    {
-        if (isGameStopped)
-        {
-            gameOverScreen.SetActive(true);
-        }
+        isGameover = true;
+        gameOverScreen.SetActive(true);
     }
 
 }

@@ -13,7 +13,7 @@ public class Chicken : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer ("enemy"))
         {
-            GameManager.instance.gameOver();
+            GameManager.instance.GameOver();
         }
 
     }

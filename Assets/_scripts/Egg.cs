@@ -14,6 +14,11 @@ public class Egg : MonoBehaviour
 
     public void PickEgg()
     {
+        if (GameManager.instance.isGameStopped)
+        {
+            return;
+        }
+
         GameDataManager.instance.eggs += GameDataManager.instance.eggValue;
         OnPickupEgg?.Invoke();
         Destroy(gameObject);

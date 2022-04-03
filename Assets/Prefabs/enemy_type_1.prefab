@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5443809566358896796}
   - component: {fileID: -4813986315257537733}
   - component: {fileID: 1154284458072324780}
+  - component: {fileID: -711866976341861900}
   m_Layer: 7
   m_Name: enemy_type_1
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5443809566358896797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.44, y: -1.02, z: 0}
-  m_LocalScale: {x: 0.44041726, y: 0.44041726, z: 0.44041726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0c201cf8d50a8e4f93702e5fb4b0e0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbf44815df3877f43b600d8fb69f7c76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,6 +114,27 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000010826941, y: 2.4335835}
-  m_Size: {x: 2.325105, y: 4.8056765}
+  m_Offset: {x: 0.13891077, y: 1.0165008}
+  m_Size: {x: 1.1632967, y: 1.9967682}
   m_Direction: 0
+--- !u!50 &-711866976341861900
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443809566358896797}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6

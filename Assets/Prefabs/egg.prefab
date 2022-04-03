@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5332340551570758326}
   - component: {fileID: 3848176110103425472}
   - component: {fileID: 488187967}
-  m_Layer: 0
+  - component: {fileID: 586120489}
+  m_Layer: 9
   m_Name: egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b5156ddad5a75642aa948f010c29ee6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d1b8bd809e5d6546a0aa081d9487ea0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.24, y: 1.44}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111,6 +112,27 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008087499, y: -0.008609977}
-  m_Size: {x: 0.83437306, y: 1.0122923}
+  m_Offset: {x: -0.008087486, y: 0.46336174}
+  m_Size: {x: 0.83437306, y: 1.0029464}
   m_Direction: 0
+--- !u!50 &586120489
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163152367356390038}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

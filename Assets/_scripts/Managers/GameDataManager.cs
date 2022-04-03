@@ -14,12 +14,15 @@ public class GameDataManager : MonoBehaviour
     public float spawnEnemiesWaitingTime = 3f;
     public float enemyMovementSpeed = 1f;
     public float enemyLife = 100f;
+    public float enemyLifeFactor = 10f;
+    public float enemyForcePushedBack = 1000f;
+    public float spawnEnemiesWaitingTimeFactor = 0.99f;
     public List<Enemy> enemies = new List<Enemy>();
 
     [Space(10)]
     [Header("Boss")]
     public float spawnBossWaitingTime = 20f;
-    public float bossMovementSpeed = 1f;
+    // public float bossMovementSpeed = 1f;
     public float bossLife = 600f;
     public List<Enemy> bosses = new List<Enemy>();
 

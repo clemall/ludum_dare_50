@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 451229697705021841}
   - component: {fileID: 6758648948438936481}
   - component: {fileID: 5681580184622547681}
+  - component: {fileID: -2078375025025909709}
   m_Layer: 7
   m_Name: boss
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 451229697705021840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.5283, y: -1.02, z: 0}
-  m_LocalScale: {x: 0.4757387, y: 0.5133369, z: 0.44041726}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0c201cf8d50a8e4f93702e5fb4b0e0e, type: 3}
-  m_Color: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12d9954ff8834d542bf82de4e7653d31, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000010826941, y: 2.4335835}
-  m_Size: {x: 2.325105, y: 4.8056765}
+  m_Offset: {x: 0.15542397, y: 1.0298944}
+  m_Size: {x: 1.0816985, y: 1.9982998}
   m_Direction: 0
 --- !u!114 &5681580184622547681
 MonoBehaviour:
@@ -116,3 +117,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathAnimnation: {fileID: 6079651303203720228, guid: a59c30d281373a04b991888b81525095, type: 3}
   life: 0
+--- !u!50 &-2078375025025909709
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451229697705021840}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6

@@ -80,12 +80,12 @@ public class SpawnEnemiesManager : MonoBehaviour
     IEnumerator IncreaseDifficulty (){
 		while(true)
 		{
-			yield return  new WaitForSeconds(2f);
+			yield return  new WaitForSeconds(6f);
             if (!GameManager.instance.isGameStopped && !STOP)
             {
                 //  increase life and spawn rate
-                GameDataManager.instance.spawnEnemiesWaitingTime *= 0.999f;
-                GameDataManager.instance.enemyLife += 3f;
+                GameDataManager.instance.spawnEnemiesWaitingTime *= GameDataManager.instance.spawnEnemiesWaitingTimeFactor;
+                GameDataManager.instance.enemyLife += GameDataManager.instance.enemyLifeFactor;
             }
 		}
 	}
